@@ -9,7 +9,7 @@
 
 :root{
   --text-color: #f5f5f5;
-  --hover-color: #12f7ff;
+  --hover-color: #c6b786;
   --bg-color: #250821;
   --secon-bg-color: #292e33;
   --big-font: 2.5rem;
@@ -80,7 +80,7 @@ span{
 }
 
 section{
-  padding: 100px 10%;
+  padding: 1px 10%;
 }
 
 .home{
@@ -212,7 +212,7 @@ a.btn:nth-child(2)::before{
   background: var(--hover-color);
 }
 .social-icons{
-  margin-top: 8rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   width: 220px;
@@ -284,7 +284,7 @@ a.btn:nth-child(2)::before{
   justify-content: center;
   align-items: center;
   grid-gap: 2em;
-  background: var(--secon-bg-color);
+  background: var(--bg-color);
 }
 .about .img-about{
   text-align: center;
@@ -373,3 +373,223 @@ a.btn:nth-child(2)::before{
     border-radius: 69% 31% 66% 34%/ 21% 30% 70% 79%;
   }
 }
+/*
+/* Style for the entire logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nabla', sans-serif;
+}
+
+/* Basic style for animated text */
+.animated-text {
+  display: inline-flex;
+  font-size: 2rem;
+  /* font-weight: 600;                                                                                 rgba(50, 19, 87, 0.6); */
+}
+
+/* Style for each letter */
+.animated-letter {
+  display: inline-block;
+  animation: bounce 1s ease-in-out infinite alternate;
+  font-variation-settings: "EDPT" 30;
+}
+
+/* Animate each letter with delay */
+.animated-letter:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.animated-letter:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animated-letter:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.animated-letter:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.animated-letter:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.animated-letter:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Keyframe animation for bounce effect */
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-10px);
+  }
+}
+
+
+
+/* mmmmmmmmm */
+/* Style for the logo text */
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Style for the animated text */
+.animated-text {
+  display: inline-flex;
+}
+
+/* Style for each animated letter */
+.animated-letter {
+  display: inline-block;
+  animation: colorChange 2s infinite;
+}
+
+/* Keyframes for color-changing animation */
+@keyframes colorChange {
+  0% {
+    color: #12f7ff; /* Cyan */
+  }
+  25% {
+    color: #ff007f; /* Magenta */
+  }
+  50% {
+    color: #00ffab; /* Green */
+  }
+  75% {
+    color: #ffae00; /* Orange */
+  }
+  100% {
+    color: #12f7ff; /* Back to Cyan */
+  }
+} */
+
+
+/* ,,,,,,,,,,,,,,,,, */
+/* Style for the logo text */
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Style for the animated text */
+.animated-text {
+  display: inline-flex;
+}
+
+/* Style for each animated letter */
+.animated-letter {
+  display: inline-block;
+  animation: bounce 1s infinite ease-in-out, colorChange 2s infinite;
+}
+
+/* Keyframes for bouncing effect */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at the same position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move upward */
+  }
+}
+
+/* Keyframes for color-changing animation */
+@keyframes colorChange {
+  0% {
+    color: #bccbcb; /* Cyan */
+  }
+  25% {
+    color: #ff007f; /* Magenta */
+  }
+  50% {
+    color: #a4b9b2; /* Green */
+  }
+  75% {
+    color: #ffae00; /* Orange */
+  }
+  100% {
+    color: #bccdce; /* Back to Cyan */
+  }
+}
+
+
+
+
+
+.img-box {
+  margin-left: 90px;
+  position: relative;
+  display: inline-block; /* Ensure it only takes as much space as the image */
+}
+
+.img-box img {
+  width: 100%;
+  max-width: 350px;
+  height: 400px;
+  border: 5px solid transparent; /* Set initial border */
+  border-radius: 10px; /* Optional: to give a rounded effect */
+  animation: blow 2s infinite; /* Add animation */
+}
+
+@keyframes blow {
+  0%, 100% {
+      border-color: rgba(255, 255, 255, 0); /* Invisible border */
+      transform: scale(1); /* Original size */
+  }
+  50% {
+      border-color: rgba(0, 255, 255, 1); /* Change to visible color (cyan here) */
+      transform: scale(1.05); /* Slightly enlarge */
+  }
+}
+/* 2 */
+.img-box {
+  position: relative;
+  display: inline-block; /* Ensure it only takes as much space as the image */
+  overflow: hidden; /* Prevent overflow from the glow */
+}
+
+.img-box img {
+  width: 300px;
+  max-width: 350px;
+  height: 400px;
+  border-radius: 10px; /* Optional: rounded effect */
+  animation: bounce 2s infinite; /* Add bounce animation */
+}
+
+.img-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px; /* Match the image's border radius */
+  border: 5px solid transparent; /* Initial border */
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 255, 0, 0.5)); /* Gradient background */
+  background-size: 300%; /* Allow background to move */
+  animation: glowingBorder 2s linear infinite; /* Flowing effect */
+  z-index: -1; /* Send the glow behind the image */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* Glowing effect */
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: scale(1); /* Original size */
+  }
+  50% {
+      transform: scale(1.05); /* Slightly enlarge */
+  }
+}
+
+@keyframes glowingBorder {
+  0% {
+      background-position: 0% 50%; /* Start position */
+  }
+  100% {
+      background-position: 100% 50%; /* End position */
+  }
+}
+
