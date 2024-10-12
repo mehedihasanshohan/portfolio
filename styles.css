@@ -33,8 +33,19 @@ body{
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+/* Example active class styling */
+header ul li a.active {
+  color: #ff5722; /* Change the color of the active link */
+  font-weight: bold; /* Optional: make it bold */
+}
+
 
 header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid transparent;
   display: flex;
   align-items: center;
   justify-content: space-between ;
@@ -67,6 +78,17 @@ span{
   0 0 80px rgba(18, 247, 255, 0.6),
   0 0 100px rgba(18, 247, 255, 0.6),
   0 0 150px rgba(18, 247, 255, 0.6);;
+}
+::-webkit-scrollbar{
+  height: 0;
+  width: .5rem;
+}
+::-webkit-scrollbar-track{
+  background: var(--secon-bg-color);
+}
+::-webkit-scrollbar-thumb{
+  background: var(--hover-color);
+  border-radius: 5rem;
 }
 
 #menu-icon{
@@ -971,4 +993,27 @@ background: var(--hover-color);
   display: flex;
   justify-content: center;
   width: 100%;
+}
+/* footer */
+footer{
+  padding: 1.5rem 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer p{
+  color: #bdbdbd;
+}
+footer a{
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+  background: var(--hover-color);
+  padding: .6rem;
+  border-radius: 5px;
+  margin-left: .6rem;
+}
+footer a i{
+  font-size: 1rem;
+  color: var(--secon-bg-color);
 }

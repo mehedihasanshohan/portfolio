@@ -56,3 +56,31 @@ circles.forEach(elem=> {
     pointsMarked[i].classList.add('marked')
   }
 })
+
+// active menu
+let menuLi = document.querySelectorAll('header ul li a');
+let sections = document.querySelectorAll('section');
+
+function activeMenu() {
+  let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  sections.forEach((section, index) => {
+    // Get the top position of each section relative to the viewport
+    let sectionTop = section.offsetTop - 100; // Adjust this offset if necessary for fixed headers
+
+    let sectionHeight = section.offsetHeight;
+
+    // Check if the current scroll position is within this section's range
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      // Remove "active" class from all links
+      menuLi.forEach(link => link.classList.remove('active'));
+
+      // Add "active" class to the current section's corresponding link
+      menuLi[index].classList.add('active');
+    }
+  });
+}
+
+// Run the function on initial load and scroll event
+window.addEventListener('scroll', activeMenu);
+activeMenu();
