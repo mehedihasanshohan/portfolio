@@ -296,7 +296,7 @@ a.btn:nth-child(2)::before{
   border: 1px solid red;
 }
 .about-content{
-  margin-left: 4rem;
+  margin-left: 15rem;
 }
 .about-content span{
   color: #bdbdbd;
@@ -306,16 +306,20 @@ a.btn:nth-child(2)::before{
   text-transform: uppercase;
 }
 .about-content h2{
+  margin-top: 1rem;
   color: var(--hover-color);
   font-weight: 700;
   font-size: var(--norma-font);
 }
 .about-content h3{
+  margin-top: .8rem;
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: .2rem;
 }
 .about-content p{
+  margin-top: .6rem;
+  margin-bottom: .6rem;
   color: #bdbdbd;
   font-weight: 300;
   margin-bottom: 1.5rem;
@@ -486,32 +490,31 @@ a.btn:nth-child(2)::before{
   animation: bounce 1s infinite ease-in-out, colorChange 2s infinite;
 }
 
-/* Keyframes for bouncing effect */
+/* Keyframes for bouncing effect
 @keyframes bounce {
   0%, 100% {
-    transform: translateY(0); /* Start and end at the same position */
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Move upward */
+    transform: translateY(-10px);
   }
 }
 
-/* Keyframes for color-changing animation */
 @keyframes colorChange {
   0% {
-    color: #bccbcb; /* Cyan */
+    color: #bccbcb;
   }
   25% {
-    color: #ff007f; /* Magenta */
+    color: #ff007f;
   }
   50% {
-    color: #a4b9b2; /* Green */
+    color: #a4b9b2;
   }
   75% {
-    color: #ffae00; /* Orange */
+    color: #ffae00;
   }
   100% {
-    color: #bccdce; /* Back to Cyan */
+    color: #bccdce;
   }
 }
 
@@ -522,41 +525,41 @@ a.btn:nth-child(2)::before{
 .img-box {
   margin-left: 90px;
   position: relative;
-  display: inline-block; /* Ensure it only takes as much space as the image */
+  display: inline-block;
 }
 
 .img-box img {
   width: 100%;
   max-width: 350px;
   height: 400px;
-  border: 5px solid transparent; /* Set initial border */
-  border-radius: 10px; /* Optional: to give a rounded effect */
-  animation: blow 2s infinite; /* Add animation */
+  border: 5px solid transparent;
+  border-radius: 10px;
+  animation: blow 2s infinite;
 }
 
 @keyframes blow {
   0%, 100% {
-      border-color: rgba(255, 255, 255, 0); /* Invisible border */
-      transform: scale(1); /* Original size */
+      border-color: rgba(255, 255, 255, 0);
+      transform: scale(1);
   }
   50% {
-      border-color: rgba(0, 255, 255, 1); /* Change to visible color (cyan here) */
-      transform: scale(1.05); /* Slightly enlarge */
+      border-color: rgba(0, 255, 255, 1);
+      transform: scale(1.05);
   }
-}
+} */
 /* 2 */
-.img-box {
+/* .img-box {
   position: relative;
-  display: inline-block; /* Ensure it only takes as much space as the image */
-  overflow: hidden; /* Prevent overflow from the glow */
+  display: inline-block;
+  overflow: hidden;
 }
 
 .img-box img {
   width: 300px;
   max-width: 350px;
   height: 400px;
-  border-radius: 10px; /* Optional: rounded effect */
-  animation: bounce 2s infinite; /* Add bounce animation */
+  border-radius: 10px;
+  animation: bounce 2s infinite;
 }
 
 .img-box::before {
@@ -566,30 +569,340 @@ a.btn:nth-child(2)::before{
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 10px; /* Match the image's border radius */
-  border: 5px solid transparent; /* Initial border */
-  background: linear-gradient(90deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 255, 0, 0.5)); /* Gradient background */
-  background-size: 300%; /* Allow background to move */
-  animation: glowingBorder 2s linear infinite; /* Flowing effect */
-  z-index: -1; /* Send the glow behind the image */
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* Glowing effect */
+  border-radius: 10px;
+  border: 5px solid transparent;
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 255, 0, 0.5));
+  background-size: 300%;
+  animation: glowingBorder 2s linear infinite;
+  z-index: -1;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
 }
 
 @keyframes bounce {
   0%, 100% {
-      transform: scale(1); /* Original size */
+      transform: scale(1);
   }
   50% {
-      transform: scale(1.05); /* Slightly enlarge */
+      transform: scale(1.05);
   }
 }
 
 @keyframes glowingBorder {
   0% {
-      background-position: 0% 50%; /* Start position */
+      background-position: 0% 50%;
   }
   100% {
-      background-position: 100% 50%; /* End position */
+      background-position: 100% 50%;
+  }
+} */
+
+/* image glowing start */
+
+.img-box {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 90px;
+}
+
+.img-box img {
+  width: 300px;
+  max-width: 350px;
+  height: 400px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  border: 5px solid transparent; /* No border by default */
+}
+
+.img-box:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.img-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: none; /* No border or color by default */
+  background-size: 200%;
+  transition: all 0.3s ease-out, opacity 0.5s ease-out; /* No immediate glow */
+  z-index: -1;
+  opacity: 0; /* Hidden until hover */
+}
+
+.img-box:hover::before {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 255, 0.5) 0%,
+    rgba(255, 0, 255, 0.5) 50%,
+    rgba(255, 255, 0, 0.5) 100%
+  ); /* Gradient starts on hover */
+  background-position: 100% 0;
+  opacity: 1; /* Border and colors appear */
+  transform: scale(1.05); /* Slightly bigger on hover */
+  transition: background-position 2.5s ease-out, opacity 1.5s ease-out; /* Smooth wave-like effect */
+}
+
+/* Bounce animation for the image */
+.img-box:hover img {
+  animation: bounce 2s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* image glowing ends */
+
+
+
+/* about image border animated */
+.about .img-about img {
+  max-width: 400px;
+  height: 400px;
+  border-radius: 10px; /* Optional: makes the corners round */
+  border: 1px solid transparent;
+  animation: softGlow 5s infinite alternate; /* Softer and slower glowing animation */
+}
+
+@keyframes softGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.4),
+                0 0 10px rgba(255, 0, 0, 0.3),
+                0 0 15px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(234, 255, 0, 0.4),
+                0 0 20px rgba(234, 255, 0, 0.3),
+                0 0 30px rgba(234, 255, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.4),
+                0 0 30px rgba(0, 0, 255, 0.3),
+                0 0 45px rgba(0, 0, 255, 0.2);
   }
 }
 
+/* services */
+#services{
+  margin-top: 30px;
+}
+.main-text{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--hover-color);
+}
+.main-text h2{
+  font-weight: 700;
+  font-size: var(--norma-font);
+}
+.main-text span{
+  color: #bccbcb;
+  font-size: .8rem;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.service-box h2 {
+  margin-top: 1rem; /* Adjust this value as needed */
+}
+
+.service-box p {
+  margin-top: 1rem; /* Adjust this value as needed */
+}
+
+.service-box .btn-box {
+  margin-top: 2rem; /* Adjust this value as needed */
+}
+
+.section-services{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.section-services .service-box{
+  flex: 1 1 18rem;
+  padding: 2rem 1rem 2rem;
+  text-align: center;
+  background: var(--secon-bg-color);
+  transition: transform .4s;
+  border-radius: 10px;
+}
+.services-btn{
+  width: auto;
+  justify-content: center;
+}
+.service-box:hover{
+  transform: translateY(-.7rem);
+}
+.service-icon{
+  border: 2px solid var(--hover-color);
+  padding: 2rem;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 50%;
+  position: relative;
+  color: var(--hover-color);
+  box-shadow: var(--neon-box-shadow);
+  margin-bottom: 10px;
+}
+/* skills */
+
+.skills{
+  background: var(--bg-color);
+}
+.skill-main{
+  width: 100%;
+  display: grid;
+  grid-template-columns: (2,1fr);
+  row-gap: 30px;
+ column-gap: 50px;
+}
+.skill-bar{
+  margin-bottom: 2.3rem;
+
+}
+.skill-main h3{
+  margin-bottom: 2rem;
+  font-size: var(--norma-font);
+  text-align: center;
+}
+
+.skill-left .skill-bar .info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.skill-left .skill-bar .bar{
+  width: 100%;
+  height: 10px;
+  background-color: var(--secon-bg-color);
+  border-radius: 25px;
+  margin-top: 10px;
+  position: relative;
+}
+.skill-bar .bar span{
+  width: 50%;
+height: 100%;
+position: absolute;
+left: 0;
+background: var(--hover-color);
+  border-radius: 25px;
+  box-shadow: var(--text-color);
+}
+
+.skill-bar .bar .html{
+  width: 72%;
+  animation: html 3s;
+}
+
+.skill-bar .bar .css{
+  width: 65%;
+  animation: css 4s;
+}
+
+.skill-bar .bar .javascript{
+  width: 85%;
+  animation: javascript 5s;
+}
+
+
+/* skill keyframe */
+@keyframes html{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 72%;
+  }
+}
+@keyframes css{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 65%;
+  }
+}
+@keyframes javascript{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 75%;
+  }
+}
+/* skill right */
+.professional{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.box{
+  position: relative;
+  margin: 10px 0;
+  flex: 1 1 15rem;
+}
+.box .text{
+  text-align: center;
+  color: #bccbcb;
+  font-size: 1rem;
+}
+.box .text big{
+  font: 400;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box .text small{
+  display: block;
+  font-weight: 600;
+}
+.circle{
+     width: 100%;
+     height: 120px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 2px solid wheat;
+}
+.circle .points{
+  width: 2px;
+  height: 10px;
+  border-color: var(--bg-color);
+  position: absolute;
+  border-radius: 3px;
+  transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+  animation: glow 0.04s linear forwards;
+  animation-delay: calc(var(--i)*0.05s);
+}
+.points-marked{
+  animation: glow 0.04s linear forwards;
+  animation-delay: calc(var(--i)*0.05s);
+}
+/* circlekeyframe */
+@keyframes glow{
+  0%{
+    background: var(--bg-color);
+    box-shadow: none;
+  }
+  100%{
+    background: var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+  }
+}
