@@ -84,3 +84,9 @@ function activeMenu() {
 // Run the function on initial load and scroll event
 window.addEventListener('scroll', activeMenu);
 activeMenu();
+
+// sticky navbar
+const header = document.querySelector("header");
+window.addEventListener("scroll",function(){
+  header.classList.toggle("sticky", this.window.scrollY > 50)
+})
