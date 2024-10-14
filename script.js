@@ -114,3 +114,106 @@ scrollBottom.forEach((el)=>observer.observe(el));
 
 const scrollTop = document.querySelectorAll(".scroll-top");
 scrollTop.forEach((el)=>observer.observe(el));
+
+// /////////////
+const hireMeBtn = document.getElementById('hireMeBtn');
+
+hireMeBtn.addEventListener('click', function () {
+  this.classList.add('click-effect', 'active');
+
+  setTimeout(() => {
+    this.classList.remove('active');
+  }, 500); // Duration of the effect
+
+  // Add additional functionality here if needed (e.g., opening a contact form or sending an email)
+});
+// ////////
+// download cv
+document.getElementById('downloadCV').addEventListener('click', function() {
+  // Create a temporary anchor element to trigger the download
+  const a = document.createElement('a');
+  a.href = './1.pdf';  // Specify the path to the PDF file in the public folder
+  a.download = 'MyCV.pdf';  // Specify the filename for the downloaded file
+  a.click();  // Trigger the click to start the download
+});
+
+
+
+//
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('modal');
+  const closeModalBtn = document.querySelector('.close-btn');
+
+  // Service details
+  const serviceDetails = {
+      webModal: {
+          title: "More About Web Development",
+          description: "Web development involves creating websites and applications for the internet, focusing on responsive and dynamic solutions."
+      },
+      frontendModal: {
+          title: "More About Frontend Development",
+          description: "Frontend development is about building intuitive interfaces that enhance user experience using modern frameworks."
+      },
+      uxModal: {
+          title: "More About UI/UX Design Integration",
+          description: "UI/UX design integrates user-centered design principles, emphasizing usability testing to create seamless experiences."
+      }
+  };
+
+  // Function to open the modal
+  function openModal(modalId) {
+      const details = serviceDetails[modalId];
+      if (details) {
+          document.getElementById('modal-title').innerText = details.title;
+          document.getElementById('modal-description').innerText = details.description;
+          modal.style.display = 'block'; // Show modal
+      }
+  }
+
+  // Event listener for "Read More" buttons
+  document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function (e) {
+          e.preventDefault(); // Prevent default anchor behavior
+          const modalId = this.getAttribute('data-modal');
+          openModal(modalId); // Open modal with corresponding details
+      });
+  });
+
+  // Close the modal when the close button is clicked
+  closeModalBtn.addEventListener('click', function () {
+      modal.style.display = 'none'; // Hide modal
+  });
+
+  // Close the modal when clicking outside of the modal content
+  window.addEventListener('click', function (event) {
+      if (event.target === modal) {
+          modal.style.display = 'none'; // Hide modal
+      }
+  });
+});
+
+
+// about modal
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('aboutModal');
+  const openModalBtn = document.getElementById('about-more');
+  const closeModalBtn = document.querySelector('.close-btn');
+
+  // Open the modal when "Read More!" is clicked
+  openModalBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      modal.style.display = 'block';
+  });
+
+  // Close the modal when the close button is clicked
+  closeModalBtn.addEventListener('click', function () {
+      modal.style.display = 'none';
+  });
+
+  // Close the modal when clicking outside the modal content
+  window.addEventListener('click', function (event) {
+      if (event.target === modal) {
+          modal.style.display = 'none';
+      }
+  });
+});

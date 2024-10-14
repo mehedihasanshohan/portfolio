@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js" integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
@@ -35,19 +36,20 @@
   <!-- home -->
   <section id="home" class="home">
     <div class="home-content scroll-scale">
-      <h1>I'm Mehedi Hasan</h1>
+      <h1>I'm <i>Mehedi Hasan</i></h1>
       <div class="change-text">
         <h3>Learning</h3>
         <h3>
           <span class="word">Frontend&nbsp;Development</span>
           <span class="word">Backend&nbsp;Development</span>
           <span class="word">React&nbsp;Development</span>
-          <span class="word">Mernstack&nbsp;Development</span>
+          <!-- <span class="word">Mernstack</span> -->
         </h3>
       </div>
 
-      <p>A passionate and results-driven Frontend Developer with a strong focus on crafting visually appealing and highly functional user interfaces. With expertise in HTML, CSS, JavaScript, and frameworks like React,</p>
-      <div class="info-box service-btn">
+      <p>A passionate and results-driven Frontend Developer with  <br>
+        a strong focus on crafting visually appealing and highly <br> functional user interfaces. With expertise in HTML, CSS, <br> JavaScript, and frameworks like React.</p>
+      <!-- <div class="info-box service-btn">
         <div class="email-info">
           <h2>Email</h2>
           <span>mhshohan01@gmail.com</span>
@@ -56,16 +58,19 @@
           <h2>Github</h2>
           <span>mhshohan</span>
         </div>
-      </div>
+      </div> -->
 
       <div class="btn-box service-btn">
-        <a href="#" class="btn">Download CV</a>
-        <a href="#" class="btn">Hire Me</a>
+        <!-- <a class="btn download-btn" id="downloadCV" href="public/1.pdf" download="My_CV.pdf">Download CV</a> -->
+        <!-- <a class="btn download-btn" id="downloadCV">Download CV</a> -->
+        <a class="btn download-btn" id="downloadCV">Download CV</a>
+        <!-- Hire Me Button with Mailto -->
+        <a class="btn" href="mailto:mhshohan01@gmail.com?subject=Job%20Opportunity&body=Hi%20Mehedi,%20I%20would%20like%20to%20discuss%20a%20job%20opportunity." id="hireMeBtn">Hire Me</a>
       </div>
 
       <div class="social-icons">
-        <a href="#"><i class="bx bxl-facebook"></i></a>
-        <a href="#"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100007820023284" target="_blank"><i class="bx bxl-facebook"></i></a>
+        <a href="https://app.netlify.com/teams/mehedihasanshohan/sites"><i class="bx bxl-instagram"></i></a>
         <a href="#"><i class="bx bxl-twitter"></i></a>
         <a href="#"><i class="bx bxl-github"></i></a>
       </div>
@@ -74,7 +79,7 @@
 
     <div class="home-image scroll-top">
       <div class="img-box service-btn">
-         <img src="./images/IMG_20210123_132734-removebg-preview.png" alt="">
+         <img src="/images/IMG_20210123_132734-removebg-preview.png" alt="">
       </div>
 
     <div class="liquid-shape">
@@ -88,22 +93,22 @@
   <!-- about -->
 <section id="about" class="about">
   <div class="img-about">
-    <img src="./images/IMG_20210123_132734-removebg-preview1.png" alt="">
+    <img src="/images/IMG_20210123_132734-removebg-preview1.png" alt="">
     <div class="info-about1">
       <span>1+</span>
       <p>Year's of experience</p>
     </div>
-    <div class="info-about2">
+    <!-- <div class="info-about2">
+      <span>20+</span>
+      <p>Complete Projects</p>
+    </div> -->
+    <div class="info-about3">
       <span>20+</span>
       <p>Complete Projects</p>
     </div>
-    <div class="info-about3">
-      <span>20+</span>
-      <p>Happy Clients</p>
-    </div>
   </div>
 
-  <div class="about-content scroll-scale">
+  <!-- <div class="about-content scroll-scale">
     <span>Let's me introduce myself</span>
     <h2>About Me</h2>
     <h3>A story of good</h3>
@@ -111,10 +116,33 @@
     </p>
 
     <div class="btn-box service-btn">
-      <a href="#" class="btn">Read More!</a>
+      <a href="#" id="about-more" class="btn">Read More!</a>
     </div>
-  </div>
+  </div> -->
+  <!-- test -->
+  <div class="about-content scroll-scale">
+    <span>Let's me introduce myself</span>
+    <h2>About Me</h2>
+    <h3>A story of good</h3>
+    <div class="btn-box service-btn">
+        <a href="#" id="about-more" class="btn">Read More!</a>
+    </div>
+</div>
 
+<!-- Modal -->
+<div id="aboutModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>About Me</h2>
+        <p id="about-description">
+            Hello! I'm Mehedi Hasan Shohan, a passionate frontend and backend developer specializing in building
+            dynamic, user-centered web applications. I love solving problems and bringing ideas to life through code.
+            With expertise in JavaScript, React, MERN stack, and UI/UX design integration, I aim to create meaningful
+            and engaging web experiences.
+        </p>
+    </div>
+</div>
+<!-- test ends -->
 </section>
 <!-- services -->
 <section id="services" class="services">
@@ -123,37 +151,73 @@
     <h2>Our Services</h2>
    </div>
 
-   <div class="section-services scroll-bottom">
+   <!-- <div class="section-services scroll-bottom">
       <div class="service-box service-btn">
-        <i class="bx bxs-layer service-icon"></i>
+        <i class="bx bx-code-alt service-icon"></i>
         <h2>Web development</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+        <p>Creating responsive and dynamic <br> websites to enhance user engagement.</p>
         <div class="btn-box services-btn">
           <a href="#" class="btn">Read More</a>
         </div>
       </div>
 
-      <div class="service-box service-btn">
-        <i class="bx bx-desktop service-icon"></i>
-        <h2>UI/UX Design Integration</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+      <!-- <div class="service-box service-btn">
+        <i class="bx bx-code-alt service-icon"></i>
+        <h2>Frontend Development</h2>
+        <p>Building intuitive interfaces using <br> modern frameworks and libraries.</p>
         <div class="btn-box services-btn">
           <a href="#"  class="btn">Read More</a>
         </div>
-      </div>
+      </div> -->
 
-      <div class="service-box services-btn">
-        <i class="bx bx-code-alt service-icon"></i>
-        <h2>Web development</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
+      <!-- <div class="service-box services-btn">
+        <i class="bx bxs-layer service-icon"></i>
+        <h2>UI/UX Design Integration</h2>
+        <p>Designing user-centered experiences through research and usability testing.</p>
         <div class="btn-box services-btn">
           <a href="#" class="btn">Read More</a>
         </div>
-      </div>
-   </div>
+      </div> -->
+   <!-- </div> -->
+   <!-- test -->
+   <div class="section-services scroll-bottom">
+    <div class="service-box service-btn">
+        <i class="bx bx-code-alt service-icon"></i>
+        <h2>Web development</h2>
+        <p>Creating responsive and dynamic <br> websites to enhance user engagement.</p>
+        <div class="btn-box services-btn">
+            <a href="#" class="btn" data-modal="webModal">Read More</a>
+        </div>
+    </div>
+
+    <div class="service-box service-btn">
+        <i class="bx bx-code-alt service-icon"></i>
+        <h2>Frontend Development</h2>
+        <p>Building intuitive interfaces using <br> modern frameworks and libraries.</p>
+        <div class="btn-box services-btn">
+            <a href="#" class="btn" data-modal="frontendModal">Read More</a>
+        </div>
+    </div>
+
+    <div class="service-box services-btn">
+        <i class="bx bxs-layer service-icon"></i>
+        <h2>UI/UX Design Integration</h2>
+        <p>Designing user-centered experiences through research and usability testing.</p>
+        <div class="btn-box services-btn">
+            <a href="#" class="btn" data-modal="uxModal">Read More</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h4 id="modal-title"></h4>
+        <p id="modal-description"></p>
+    </div>
+</div>
+
 </section>
 <!-- skill -->
  <section id="skills" class="skill">
