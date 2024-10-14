@@ -876,7 +876,7 @@ background: var(--hover-color);
     width: 0%;
   }
   100%{
-    width: 75%;
+    width: 100%;
   }
 }
 @keyframes css{
@@ -884,7 +884,7 @@ background: var(--hover-color);
     width: 0%;
   }
   100%{
-    width: 65%;
+    width: 100%;
   }
 }
 @keyframes javascript{
@@ -892,7 +892,7 @@ background: var(--hover-color);
     width: 0%;
   }
   100%{
-    width: 70%;
+    width: 100%;
   }
 }
 
@@ -901,7 +901,7 @@ background: var(--hover-color);
     width: 0%;
   }
   100%{
-    width: 85%;
+    width: 100%;
   }
 }
 /* skill right */
@@ -1047,52 +1047,6 @@ footer a i{
 }
 
 
-/* /////////////////// */
-.hire-me-button {
-  padding: 10px 20px;
-  background-color: #ffcc00; /* Customize the button color */
-  color: #000;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.hire-me-button:hover {
-  background-color: #e6b800; /* Change background color on hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-  transform: translateY(-2px); /* Lift effect on hover */
-}
-
-.hire-me-button:active {
-  transform: scale(0.98); /* Shrink the button a bit when clicked */
-  background-color: #ff9900; /* Change color when clicked */
-}
-
-.click-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.click-effect:after {
-  content: "";
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  background: rgba(255, 255, 255, 0.5);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.5s ease-out;
-  border-radius: 50%;
-}
-
-.click-effect.active:after {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 0;
-}
 
 
 
